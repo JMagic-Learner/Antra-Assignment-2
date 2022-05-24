@@ -6,11 +6,11 @@ let array3 = ["J", "O", "K", "I", "N", "G"]
 let array4 = ["1", "8", "J", "U", "S", "T"]
 let array5 = [1, 8, "J", "U", "S", "T"]
 
-Array.prototype.myReduce = function () {
-    let valueSum = 0;
-    for (let i = 0; i < this.length; i++) {
-        if (i == 0 ) {
-        valueSum = this[i];
+Array.prototype.myReduce = function (startingIndex) {
+    let valueSum = startingIndex;
+    for (let i = startingIndex; i < this.length; i++) {
+        if (i == startingIndex ) {
+        valueSum = this[startingIndex];
         } else {
         valueSum = valueSum + this[i];
         }
@@ -18,11 +18,11 @@ Array.prototype.myReduce = function () {
     return valueSum;
 }
 
-const reduceResult = array1.myReduce();
-const reduceResult2 = array2.myReduce();
-const reduceResult3 = array3.myReduce();
-const reduceResult4 = array4.myReduce();
-const reduceResult5 = array5.myReduce();
+const reduceResult = array1.myReduce(0);
+const reduceResult2 = array2.myReduce(0);
+const reduceResult3 = array3.myReduce(0);
+const reduceResult4 = array4.myReduce(0);
+const reduceResult5 = array5.myReduce(0);
 console.log(reduceResult);
 console.log(reduceResult2);
 console.log(reduceResult3);
