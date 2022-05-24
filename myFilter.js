@@ -29,7 +29,7 @@ function conditionalCHECK(input) {
     // return false
 }
 
-Array.prototype.myFilter = function () {
+Array.prototype.myFilter = function (callbackFn ) {
 
     // ACCORDING TO MDN DOCUMENTATION, FILTER ALSO WORKS FOR ARRAYS OF STRINGS
     // Please see javascript lines 5 -8. - Jason Ma 5/23/2022
@@ -39,16 +39,16 @@ Array.prototype.myFilter = function () {
 
     // Loop through the array, checking to see if every value in index matches 
     for (let i = 0; i < this.length; i++) {
-        if (conditionalCHECK(this[i]) == true) {
+        if (callbackFn(this[i]) == true) {
             arrayStorage.push(this[i]);
         }
     }
     return arrayStorage;
 }
 
-const testResult = ages.myFilter();
-const testResult2 = agesTest.myFilter();
-const testResult3 = agesTest2.myFilter();
+const testResult = ages.myFilter(conditionalCHECK);
+const testResult2 = agesTest.myFilter(conditionalCHECK);
+const testResult3 = agesTest2.myFilter(conditionalCHECK);
 console.log(testResult);
 console.log(testResult2);
 console.log(testResult3);
