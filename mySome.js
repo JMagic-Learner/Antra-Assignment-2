@@ -1,12 +1,14 @@
 // mySome 
 
+// instead of definining the limit inside the prototype, we can also declare this variable outside in global scope.
+// Contrast this to myFilter, where we can declare the limit constraint inside.
 const limit = 18;
-function conditionalCHECK(input) {
+function conditionalCHECK(input, ) {
 
     // SCENARIO 1: Filter by upper limit 
-    if (input > limit)
+    if (input > limit) {
         return true
-
+    }
     // SCENARIO 2: Filter by if the index number is divisible by 2 
 
     // if (input % 2 === 0) {
@@ -17,13 +19,13 @@ function conditionalCHECK(input) {
 
 
     // SCENARIO 3: Filter by character count. set limit to 6 to see that agesTest2 returns 'twelve' and 'thirty'
-    if (typeof input === "string") {
-        let lengthcheck = input.length;
-        if (lengthcheck == limit) {
-            return true;
-        }
-    }
-    return false
+    // if (typeof input === "string") {
+    //     let lengthcheck = input.length;
+    //     if (lengthcheck == limit) {
+    //         return true;
+    //     }
+    // }
+    // return false
 }
 
 Array.prototype.mySome = function () {
